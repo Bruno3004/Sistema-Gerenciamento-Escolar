@@ -1,4 +1,4 @@
-# Unifaat :: Devweb :: Projeto - Base
+# Unifaat Projeto - Sistema de Gerenciamento Escolar
 
 ## Instalação e Execução
 
