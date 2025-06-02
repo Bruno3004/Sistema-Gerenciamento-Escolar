@@ -23,6 +23,29 @@ CREATE TABLE Aluno (
     email_responsavel VARCHAR(100) NOT NULL,
     informacoes_adicionais TEXT,
 );
+
+CREATE TABLE Pagamentos (
+    id SERIAL PRIMARY KEY,
+    id_aluno INT REFERENCES Aluno(id_aluno),
+    data_pagamento DATE NOT NULL,
+    valor NUMERIC(10,2) NOT NULL,
+    status VARCHAR(20) CHECK (status IN ('Pago', 'Pendente'))
+);
+
+CREATE TABLE Presencas (
+    id SERIAL PRIMARY KEY,
+    aluno_id INT REFERENCES alunos(id),
+    data_presenca DATE NOT NULL
+);
+
+CREATE TABLE Atividades (
+    id SERIAL PRIMARY KEY,
+    aluno_id INT REFERENCES alunos(id),
+    descricao TEXT NOT NULL,
+    data_atividade DATE NOT NULL,
+    link_atividade TEXT,
+);
+
 -- Inserção de dados de exemplo
  INSERT INTO Professor (nome_completo, email, telefone) VALUES 
     ('Alexandre', 'teste@exemplo.com', '41414212'),
