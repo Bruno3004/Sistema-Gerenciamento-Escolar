@@ -1,40 +1,31 @@
-const { DataTypes } = require("sequelize");
-const sequelize = require("../config/database");
-const Aluno = require("./Aluno"); // Importando a model Aluno
+import { DataTypes } from "sequelize";
+import sequelize from "../../config/sequelize.js";
 
-const Atividades = sequelize.define(
-  "Atividades",
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true,
-    },
-    aluno_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: Aluno,
-        key: "id_aluno",
+export default (function () {
+  return sequelize.define(
+    "Atividades",
+    {
+      id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+      },
+      descricao: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
+      data_atividade: {
+        type: DataTypes.DATE,
+        allowNull: false,
+      },
+      link_atividade: {
+        type: DataTypes.TEXT,
+        allowNull: true,
       },
     },
-    descricao: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-    },
-    data_atividade: {
-      type: DataTypes.DATE,
-      allowNull: false,
-    },
-    link_atividade: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-    },
-  },
-  {
-    tableName: "Atividades",
-    timestamps: false,
-  }
-);
-
-module.exports = Atividades;
+    {
+      tableName: "atividades",
+      timestamps: false,
+    }
+  );
+});

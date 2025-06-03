@@ -1,33 +1,24 @@
-import { Router } from 'express';
-import express from 'express';
-import path from 'path';
+import { Router } from "express";
+import express from "express";
+import path from "path";
 
-import exampleModelApi from "./exampleApi.js";
-import ListPublicFilesController from '../app/Controllers/ListPublicFilesController.js';
+import routesApi from "./api.js";
+import ListPublic from "../app/Controllers/ListPublic.js";
 
 export default (function () {
+  const router = Router();
 
-    const router = Router();
+  router.use(express.json());
 
-    /** Usado para servir json */
-    router.use(express.json());
+  router.use(express.static(path.join(CONSTANTS.DIR, "public")));
 
-    /** Servir o public estaticamente, tanto para arquivos como para os assets de frontend */
-    // NÃO SERÁ CHAMADO CASO TENHA A CAMADA DE NGINX COM ARQUIVOS ESTÁTICOS
-    router.use(express.static(path.join(CONSTANTS.DIR, 'public')));
+  router.get("/", ListPublic);
 
-    // Rota para listar arquivos na pasta 'public'
-    // NÃO SERÁ CHAMADO CASO TENHA A CAMADA DE NGINX COM ARQUIVOS ESTÁTICOS
-    router.get('/', ListPublicFilesController);
+  router.use("/", routesApi);
 
-    // example model routes
-    router.use('/', exampleModelApi);
+  router.use((req, res) => {
+    res.status(CONSTANTS.HTTP.NOT_FOUND).json({ error: "Not found" });
+  });
 
-    /** Se nenhuma rota for encontrada, 404 neles! */
-    router.use((req, res) => {
-        res.status(CONSTANTS.HTTP.NOT_FOUND).json({ error: "Not found" });
-    });
-
-    return router;
-
+  return router;
 })();

@@ -1,17 +1,56 @@
-const Aluno = require("../app/Models/AlunoModel");
-const Turma = require("../app/Models/TurmaModel");
-const Professor = require("../app/Models/ProfessorModel");
-const Pagamentos = require("../app/Models/PagamentosModel");
-const Presencas = require("../app/Models/PresencasModel");
-const Atividades = require("../app/Models/AtividadesModel");
+import AlunoModel from "../app/Models/AlunoModel";
+import AtividadesModel from "../app/Models/AtividadesModel";
+import PagamentosModel from "../app/Models/PagamentosModel";
+import PresencasModel from "../app/Models/PresencasModel";
+import ProfessorModel from "../app/Models/ProfessorModel";
+import TurmaModel from "../app/Models/TurmaModel";
 
-Aluno.belongsTo(Turma, { foreignKey: "id_turma" });
-Turma.hasMany(Aluno, { foreignKey: "id_turma" });
-Turma.belongsTo(Professor, { foreignKey: "id_professor" });
-Professor.hasMany(Turma, { foreignKey: "id_professor" });
-Pagamentos.belongsTo(Aluno, { foreignKey: "id_aluno" });
-Aluno.hasMany(Pagamentos, { foreignKey: "id_aluno" });
-Presencas.belongsTo(Aluno, { foreignKey: "aluno_id" });
-Aluno.hasMany(Presencas, { foreignKey: "aluno_id" });
-Atividades.belongsTo(Aluno, { foreignKey: "aluno_id" });
-Aluno.hasMany(Atividades, { foreignKey: "aluno_id" });
+AlunoModel.belongsTo(TurmaModel, {
+  foreignKey: "id_turma",
+  as: "turma",
+});
+
+TurmaModel.hasMany(AlunoModel, {
+  foreignKey: "id_turma",
+  as: "aluno",
+});
+
+TurmaModel.belongsTo(ProfessorModel, {
+  foreignKey: "id_professor",
+  as: "professor",
+});
+
+PresencasModel.hasMany(TurmaModel, {
+  foreignKey: "id_professor",
+  as: "turma",
+});
+
+PagamentosModel.belongsTo(AlunoModel, {
+  foreignKey: "id_aluno",
+  as: "aluno",
+});
+
+AlunoModel.hasMany(PagamentosModel, {
+  foreignKey: "id_aluno",
+  as: "pagamentos",
+});
+
+PresencasModel.belongsTo(AlunoModel, {
+  foreignKey: "aluno_id",
+  as: "aluno",
+});
+
+AlunoModel.hasMany(PresencasModel, {
+  foreignKey: "aluno_id",
+  as: "presenca",
+});
+
+AtividadesModel.belongsTo(AlunoModel, {
+  foreignKey: "aluno_id",
+  as: "aluno",
+});
+
+AlunoModel.hasMany(AtividadesModel, {
+  foreignKey: "aluno_id",
+  as: "atividades",
+});
