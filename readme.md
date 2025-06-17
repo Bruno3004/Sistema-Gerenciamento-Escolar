@@ -12,14 +12,20 @@ O objetivo do sistema é modernizar e facilitar o gerenciamento escolar, permiti
 
 ## Tecnologias Utilizadas
 
-Java Script
-Html
-Docker
-Postgres
-Nginx
-Node
-Sequelize
-Axios
+1. Java Script
+2. Html
+3. Docker
+4. Postgres
+5. Nginx
+6. Node
+7. Sequelize
+8. Axios
+
+## Pré-requisitos
+
+1. Docker
+2. Docker compose
+3. Git 
 
 ## Instalação/Configurar
 
@@ -72,11 +78,30 @@ Axios
    docker compose up --build
    ```
 
-O servidor estará disponível em: [http://localhost:8080](http://localhost:8080)
-
 Observação: ./Insomnia.yml pode ser utilizado no insomnia
+
+## Variáveis de Ambiente
+
+1. PORT=8080
+
+2. POSTGRES_HOST=postgres_host
+3. POSTGRES_PORT=5432
+4. POSTGRES_USER=admin_escola
+5. POSTGRES_PASSWORD=admin_2025
+6. POSTGRES_DB=db_escola
 
 ## Como Usar
 
+O servidor estará disponível em: [http://localhost:8080](http://localhost:8080)
+
 Documentação de como consumir as api: http://localhost:8080/docs
 
+## Contribuição
+
+Para passo a passo completo acessar a wiki do projeto
+
+1. Faça um Fork do projeto
+2. Crie uma Branch para sua Feature (git checkout -b sujestao-melhoria)
+3. Commit suas mudanças (git commit -m 'Sujestao de Melhoria')
+4. Push para a Branch (git push origin sujestao-melhoria)
+5. Abra um Pull Request
