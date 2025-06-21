@@ -21,7 +21,7 @@ CREATE TABLE Aluno (
     nome_responsavel VARCHAR(255) NOT NULL,
     telefone_responsavel VARCHAR(20) NOT NULL,
     email_responsavel VARCHAR(100) NOT NULL,
-    informacoes_adicionais TEXT,
+    informacoes_adicionais TEXT
 );
 
 CREATE TABLE Pagamentos (
@@ -43,7 +43,7 @@ CREATE TABLE Atividades (
     id_aluno INT REFERENCES Aluno(id_aluno),
     descricao TEXT NOT NULL,
     data_atividade DATE NOT NULL,
-    link_atividade TEXT,
+    link_atividade TEXT
 );
 
 -- Inserção de dados de exemplo

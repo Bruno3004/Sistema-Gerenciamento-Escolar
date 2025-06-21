@@ -3,7 +3,8 @@ import express from "express";
 import path from "path";
 
 import routesApi from "./api.js";
-import ListPublic from "../app/Controllers/ListPublic.js";
+import ListPublic from "../app/Http/Controllers/ListPublic.js";
+import CONSTANTS from "../../config/constants.js";
 
 export default (function () {
   const router = Router();

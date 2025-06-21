@@ -1,12 +1,13 @@
 import { join } from "path";
 import { readdir } from "fs";
+import CONSTANTS from "../../../../config/constants.js";
 
 export default async (request, response) => {
   const dirPath = join(CONSTANTS.DIR, "public");
 
   readdir(dirPath, (err, files) => {
     if (err) {
-      return res
+      return response
         .status(CONSTANTS.HTTP.SERVER_ERROR)
         .send("Erro ao ler o diretório");
     }

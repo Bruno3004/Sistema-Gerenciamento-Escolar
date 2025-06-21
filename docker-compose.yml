@@ -1,5 +1,4 @@
 services:
-
   #NODE
   node-web-container:
     build:
@@ -51,7 +50,6 @@ services:
       project-network:
         aliases:
           - ${POSTGRES_HOST}
-
 
 #OTHERS
 

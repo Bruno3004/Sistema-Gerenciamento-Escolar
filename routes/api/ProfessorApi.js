@@ -1,29 +1,26 @@
-import { Router } from 'express';
-import ListProfessorController from '../../app/Http/Controllers/ProfessorApi/ListProfessorController.js';
-import InsertProfessorController from '../../app/Http/Controllers/ProfessorApi/InsertProfessorController.js';
-import UpdateProfessorController from '../../app/Http/Controllers/ProfessorApi/UpdateProfessorController.js';
-import GetProfessorController from '../../app/Http/Controllers/ProfessorApi/GetProfessorController.js';
-import DeleteProfessorController from '../../app/Http/Controllers/ProfessorApi/DeleteProfessorController.js';
+import { Router } from "express";
+import SelectProfessorController from "../../app/Http/Controllers/ProfessorApi/SelectProfessorController.js";
+import InsertProfessorController from "../../app/Http/Controllers/ProfessorApi/InsertProfessorController.js";
+import UpdateProfessorController from "../../app/Http/Controllers/ProfessorApi/UpdateProfessorController.js";
+import DeleteProfessorController from "../../app/Http/Controllers/ProfessorApi/DeleteProfessorController.js";
 
 export default (function () {
+  const router = Router();
 
-    const router = Router();
+  // GET Listar
+  router.get("/Professor", SelectProfessorController);
 
-    // GET Listar
-    router.get('/Professor', ListProfessorController);
+  // GET Obter
+  router.get("/Professor/:id", SelectProfessorController);
 
-    // GET Obter
-    router.get('/Professor/:id', GetProfessorController);
+  // POST Inserir
+  router.post("/Professor", InsertProfessorController);
 
-    // POST Inserir
-    router.post('/Professor', InsertProfessorController);
+  // PUT Atualizar
+  router.put("/Professor/:id", UpdateProfessorController);
 
-    // PUT Atualizar
-    router.put('/Professor/:id', UpdateProfessorController);
+  // DELETE Excluir
+  router.delete("/Professor/:id", DeleteProfessorController);
 
-    // DELETE Excluir
-    router.delete('/Professor/:id', DeleteProfessorController);
-
-    return router;
-
+  return router;
 })();
