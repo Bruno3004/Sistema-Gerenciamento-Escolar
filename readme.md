@@ -18,19 +18,19 @@ https://github.com/Bruno3004/Sistema-Gerenciamento-Escolar/wiki
 
 ## Tecnologias Utilizadas
 
-1. Java Script
-2. Html
-3. Docker
-4. Postgres
-5. Nginx
-6. Node
-7. Sequelize
+** Java Script**
+** Html**
+** Docker**
+** Postgres**
+** Nginx**
+** Node**
+** Sequelize**
 
 ## Pré-requisitos
 
-1. Docker
-2. Docker compose
-3. Git
+** Docker**
+** Docker compose**
+** Git**
 
 ## Instalação/Configurar
 
@@ -85,14 +85,15 @@ https://github.com/Bruno3004/Sistema-Gerenciamento-Escolar/wiki
 Observação: ./Insomnia_Collection.yml pode ser utilizado no insomnia
 
 ## Variáveis de Ambiente
+```env 
+PORT=8080
 
-1. PORT=8080
-
-2. POSTGRES_HOST=postgres_host
-3. POSTGRES_PORT=5432
-4. POSTGRES_USER=admin_escola
-5. POSTGRES_PASSWORD=admin_2025
-6. POSTGRES_DB=db_escola
+POSTGRES_HOST=postgres_host
+POSTGRES_PORT=5432
+POSTGRES_USER=admin_escola
+POSTGRES_PASSWORD=admin_2025
+POSTGRES_DB=db_escola
+```
 
 ## Como Usar
 
