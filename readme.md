@@ -14,7 +14,7 @@ O objetivo do sistema é modernizar e facilitar o gerenciamento escolar, permiti
 
 Wiki do Projeto
 
-(https://github.com/Bruno3004/Sistema-Gerenciamento-Escolar/wiki)
+https://github.com/Bruno3004/Sistema-Gerenciamento-Escolar/wiki
 
 ## Tecnologias Utilizadas
 
