@@ -82,7 +82,7 @@ https://github.com/Bruno3004/Sistema-Gerenciamento-Escolar/wiki
    docker compose up --build
    ```
 
-Observação: ./Insomnia.yml pode ser utilizado no insomnia
+Observação: ./Insomnia_Collection.yml pode ser utilizado no insomnia
 
 ## Variáveis de Ambiente
 
