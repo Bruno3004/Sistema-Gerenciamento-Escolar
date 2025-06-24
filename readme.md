@@ -10,6 +10,14 @@ Gostaríamos de solicitar o desenvolvimento de um sistema computacional para oti
 
 O objetivo do sistema é modernizar e facilitar o gerenciamento escolar, permitindo um controle mais eficiente de dados acadêmicos, administrativos e operacionais. Com essa solução, será possível organizar registros de alunos e professores, acompanhar o desempenho escolar e melhorar a comunicação interna, tornando os processos mais ágeis e precisos.
 
+### Mais detalhes
+
+Wiki do Projeto
+
+```
+https://github.com/Bruno3004/Sistema-Gerenciamento-Escolar/wiki
+```
+
 ## Tecnologias Utilizadas
 
 1. Java Script
