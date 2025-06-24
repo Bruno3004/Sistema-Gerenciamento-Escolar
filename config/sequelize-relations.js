@@ -1,9 +1,9 @@
-import AlunoModel from "../app/Models/AlunoModel";
-import AtividadesModel from "../app/Models/AtividadesModel";
-import PagamentosModel from "../app/Models/PagamentosModel";
-import PresencasModel from "../app/Models/PresencasModel";
-import ProfessorModel from "../app/Models/ProfessorModel";
-import TurmaModel from "../app/Models/TurmaModel";
+import AlunoModel from "../app/Models/AlunoModel.js";
+import AtividadesModel from "../app/Models/AtividadesModel.js";
+import PagamentosModel from "../app/Models/PagamentosModel.js";
+import PresencasModel from "../app/Models/PresencasModel.js";
+import ProfessorModel from "../app/Models/ProfessorModel.js";
+import TurmaModel from "../app/Models/TurmaModel.js";
 
 AlunoModel.belongsTo(TurmaModel, {
   foreignKey: "id_turma",
@@ -12,7 +12,7 @@ AlunoModel.belongsTo(TurmaModel, {
 
 TurmaModel.hasMany(AlunoModel, {
   foreignKey: "id_turma",
-  as: "aluno",
+  as: "alunos",
 });
 
 TurmaModel.belongsTo(ProfessorModel, {
@@ -20,9 +20,9 @@ TurmaModel.belongsTo(ProfessorModel, {
   as: "professor",
 });
 
-PresencasModel.hasMany(TurmaModel, {
+ProfessorModel.hasMany(TurmaModel, {
   foreignKey: "id_professor",
-  as: "turma",
+  as: "turmas",
 });
 
 PagamentosModel.belongsTo(AlunoModel, {
@@ -36,21 +36,21 @@ AlunoModel.hasMany(PagamentosModel, {
 });
 
 PresencasModel.belongsTo(AlunoModel, {
-  foreignKey: "aluno_id",
+  foreignKey: "id_aluno",
   as: "aluno",
 });
 
 AlunoModel.hasMany(PresencasModel, {
-  foreignKey: "aluno_id",
-  as: "presenca",
+  foreignKey: "id_aluno",
+  as: "presencas",
 });
 
 AtividadesModel.belongsTo(AlunoModel, {
-  foreignKey: "aluno_id",
+  foreignKey: "id_aluno",
   as: "aluno",
 });
 
 AlunoModel.hasMany(AtividadesModel, {
-  foreignKey: "aluno_id",
+  foreignKey: "id_aluno",
   as: "atividades",
 });

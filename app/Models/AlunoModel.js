@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../../config/sequelize.js";
+import TurmaModel from "./TurmaModel.js";
 
 export default (function () {
   return sequelize.define(
@@ -17,6 +18,14 @@ export default (function () {
       data_nascimento: {
         type: DataTypes.DATE,
         allowNull: false,
+      },
+      id_turma: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: TurmaModel,
+          key: "id_turma",
+        },
       },
       nome_responsavel: {
         type: DataTypes.STRING(255),

@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../../config/sequelize.js";
+import ProfessorModel from "./ProfessorModel.js";
 
 export default (function () {
   return sequelize.define(
@@ -14,6 +15,14 @@ export default (function () {
         type: DataTypes.STRING(50),
         allowNull: false,
       },
+      id_professor: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: ProfessorModel,
+          key: "id_professor",
+        },
+      },
       horario: {
         type: DataTypes.STRING(100),
         allowNull: false,
@@ -24,4 +33,4 @@ export default (function () {
       timestamps: false,
     }
   );
-});
+})();

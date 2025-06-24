@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../../config/sequelize.js";
+import AlunoModel from "./AlunoModel.js";
 
 export default (function () {
   return sequelize.define(
@@ -9,6 +10,14 @@ export default (function () {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
+      },
+      id_aluno: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: AlunoModel,
+          key: "id_aluno",
+        },
       },
       descricao: {
         type: DataTypes.TEXT,
@@ -28,4 +37,4 @@ export default (function () {
       timestamps: false,
     }
   );
-});
+})();

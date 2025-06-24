@@ -1,8 +1,8 @@
 import { Router } from "express";
-import SelectProfessorController from "../../app/Http/Controllers/ProfessorApi/SelectProfessorController.js";
 import InsertProfessorController from "../../app/Http/Controllers/ProfessorApi/InsertProfessorController.js";
 import UpdateProfessorController from "../../app/Http/Controllers/ProfessorApi/UpdateProfessorController.js";
 import DeleteProfessorController from "../../app/Http/Controllers/ProfessorApi/DeleteProfessorController.js";
+import SelectProfessorController from "../../app/Http/Controllers/ProfessorApi/SelectProfessorController.js";
 
 export default (function () {
   const router = Router();

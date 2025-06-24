@@ -1,17 +1,26 @@
-import { Router } from 'express';
-import InsertAtividadeController from '../../app/Http/Controllers/AtividadeApi/InsertAtividadeController.js';
-import DeleteAtividadeController from '../../app/Http/Controllers/AtividadeApi/DeleteAtividadeController.js';
+import { Router } from "express";
+import InsertAtividadeController from "../../app/Http/Controllers/AtividadesApi/InsertAtividadeController.js";
+import DeleteAtividadeController from "../../app/Http/Controllers/AtividadesApi/DeleteAtividadeController.js";
+import SelectAtividadeController from "../../app/Http/Controllers/AtividadesApi/SelectAtividadeController.js";
+import UpdateAtividadeController from "../../app/Http/Controllers/AtividadesApi/UpdateAtividadeController.js";
 
 export default (function () {
+  const router = Router();
 
-    const router = Router();
+  // POST inserir atividade
+  router.post("/atividades", InsertAtividadeController);
 
-    // POST inserir atividade
-    router.post('/atividades', InsertAtividadeController);
+  // GET Obter
+  router.get("/atividades/", SelectAtividadeController);
 
-    // DELETE excluir atividade
-    router.delete('/atividades/:id', DeleteAtividadeController);
+  // GET Obter
+  router.get("/atividades/:id", SelectAtividadeController);
 
-    return router;
+  // PUT Atualizar
+  router.put("/atividades/:id", UpdateAtividadeController);
 
+  // DELETE excluir atividade
+  router.delete("/atividades/:id", DeleteAtividadeController);
+
+  return router;
 })();

@@ -2,7 +2,7 @@
 
 ## Descrição Breve
 
-### Requisitos 
+### Requisitos
 
 Gostaríamos de solicitar o desenvolvimento de um sistema computacional para otimizar as atividades da escola. Atualmente, toda a gestão é feita manualmente em cadernos, o que dificulta o acompanhamento das informações, especialmente com o crescimento da instituição.
 
@@ -19,13 +19,12 @@ O objetivo do sistema é modernizar e facilitar o gerenciamento escolar, permiti
 5. Nginx
 6. Node
 7. Sequelize
-8. Axios
 
 ## Pré-requisitos
 
 1. Docker
 2. Docker compose
-3. Git 
+3. Git
 
 ## Instalação/Configurar
 
@@ -56,7 +55,6 @@ O objetivo do sistema é modernizar e facilitar o gerenciamento escolar, permiti
    ```ini
    cp .env.example .env
    ```
-
 
 4. Subir a aplicação com Docker Compose:
 

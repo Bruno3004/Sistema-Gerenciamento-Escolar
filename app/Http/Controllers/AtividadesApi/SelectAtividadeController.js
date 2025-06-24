@@ -29,23 +29,10 @@ export default async (request, response) => {
       // Busca atividades de um aluno específico
       result = await AtividadesModel.findAll({
         where: { aluno_id: aluno_id },
-        include: [
-          {
-            model: AlunoModel,
-            as: "aluno",
-          },
-        ],
       });
     } else {
       // Busca todas as atividades
-      result = await AtividadesModel.findAll({
-        include: [
-          {
-            model: AlunoModel,
-            as: "aluno",
-          },
-        ],
-      });
+      result = await AtividadesModel.findAll({});
     }
 
     return response.status(HTTP_STATUS.SUCCESS).json(result);

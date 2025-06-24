@@ -1,0 +1,434 @@
+_type: export
+__export_format: 4
+__export_date: 2024-11-26T10:00:00.000Z
+__export_source: insomnia.desktop.app:v2023.5.8
+resources:
+  # ALUNOS
+  - _id: req_alunos_list
+    _type: request
+    parentId: fld_alunos
+    name: Listar Alunos
+    url: http://localhost:8080/alunos
+    method: GET
+    headers: []
+    body: {}
+
+  - _id: req_alunos_get
+    _type: request
+    parentId: fld_alunos
+    name: Obter Aluno
+    url: http://localhost:8080/alunos/1
+    method: GET
+    headers: []
+    body: {}
+
+  - _id: req_alunos_create
+    _type: request
+    parentId: fld_alunos
+    name: Criar Aluno
+    url: http://localhost:8080/alunos
+    method: POST
+    headers:
+      - name: Content-Type
+        value: application/json
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "nome_completo": "João Silva",
+          "data_nascimento": "2010-05-15",
+          "id_turma": 1,
+          "nome_responsavel": "Maria Silva",
+          "telefone_responsavel": "11999999999",
+          "email_responsavel": "maria@email.com",
+          "informacoes_adicionais": "Nenhuma"
+        }
+
+  - _id: req_alunos_update
+    _type: request
+    parentId: fld_alunos
+    name: Atualizar Aluno
+    url: http://localhost:8080/alunos/1
+    method: PUT
+    headers:
+      - name: Content-Type
+        value: application/json
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "nome_completo": "João Silva Santos",
+          "telefone_responsavel": "11888888888"
+        }
+
+  - _id: req_alunos_delete
+    _type: request
+    parentId: fld_alunos
+    name: Deletar Aluno
+    url: http://localhost:8080/alunos/1
+    method: DELETE
+    headers: []
+    body: {}
+
+  # PROFESSORES
+  - _id: req_professores_list
+    _type: request
+    parentId: fld_professores
+    name: Listar Professores
+    url: http://localhost:8080/Professor
+    method: GET
+    headers: []
+    body: {}
+
+  - _id: req_professores_get
+    _type: request
+    parentId: fld_professores
+    name: Obter Professor
+    url: http://localhost:8080/Professor/1
+    method: GET
+    headers: []
+    body: {}
+
+  - _id: req_professores_create
+    _type: request
+    parentId: fld_professores
+    name: Criar Professor
+    url: http://localhost:8080/Professor
+    method: POST
+    headers:
+      - name: Content-Type
+        value: application/json
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "nome_completo": "Prof. Carlos Silva",
+          "email": "carlos@escola.com",
+          "telefone": "11999887766"
+        }
+
+  - _id: req_professores_update
+    _type: request
+    parentId: fld_professores
+    name: Atualizar Professor
+    url: http://localhost:8080/Professor/1
+    method: PUT
+    headers:
+      - name: Content-Type
+        value: application/json
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "telefone": "11999887755"
+        }
+
+  - _id: req_professores_delete
+    _type: request
+    parentId: fld_professores
+    name: Deletar Professor
+    url: http://localhost:8080/Professor/1
+    method: DELETE
+    headers: []
+    body: {}
+
+  # TURMAS
+  - _id: req_turmas_list
+    _type: request
+    parentId: fld_turmas
+    name: Listar Turmas
+    url: http://localhost:8080/Turma
+    method: GET
+    headers: []
+    body: {}
+
+  - _id: req_turmas_get
+    _type: request
+    parentId: fld_turmas
+    name: Obter Turma
+    url: http://localhost:8080/Turma/1
+    method: GET
+    headers: []
+    body: {}
+
+  - _id: req_turmas_create
+    _type: request
+    parentId: fld_turmas
+    name: Criar Turma
+    url: http://localhost:8080/Turma
+    method: POST
+    headers:
+      - name: Content-Type
+        value: application/json
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "nome_turma": "6º Ano C",
+          "horario": "08:00 - 12:00",
+          "id_professor": 1
+        }
+
+  - _id: req_turmas_update
+    _type: request
+    parentId: fld_turmas
+    name: Atualizar Turma
+    url: http://localhost:8080/Turma/1
+    method: PUT
+    headers:
+      - name: Content-Type
+        value: application/json
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "horario": "13:00 - 17:00"
+        }
+
+  - _id: req_turmas_delete
+    _type: request
+    parentId: fld_turmas
+    name: Deletar Turma
+    url: http://localhost:8080/Turma/1
+    method: DELETE
+    headers: []
+    body: {}
+
+  # PRESENÇAS
+  - _id: req_presencas_list
+    _type: request
+    parentId: fld_presencas
+    name: Listar Presenças
+    url: http://localhost:8080/Presencas
+    method: GET
+    headers: []
+    body: {}
+
+  - _id: req_presencas_get
+    _type: request
+    parentId: fld_presencas
+    name: Obter Presença
+    url: http://localhost:8080/Presencas/1
+    method: GET
+    headers: []
+    body: {}
+
+  - _id: req_presencas_by_aluno
+    _type: request
+    parentId: fld_presencas
+    name: Presenças por Aluno
+    url: http://localhost:8080/Presencas?aluno_id=1
+    method: GET
+    headers: []
+    body: {}
+
+  - _id: req_presencas_create
+    _type: request
+    parentId: fld_presencas
+    name: Criar Presença
+    url: http://localhost:8080/Presencas
+    method: POST
+    headers:
+      - name: Content-Type
+        value: application/json
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "aluno_id": 1,
+          "data_presenca": "2024-11-26"
+        }
+
+  - _id: req_presencas_update
+    _type: request
+    parentId: fld_presencas
+    name: Atualizar Presença
+    url: http://localhost:8080/Presencas/1
+    method: PUT
+    headers:
+      - name: Content-Type
+        value: application/json
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "data_presenca": "2024-11-27"
+        }
+
+  - _id: req_presencas_delete
+    _type: request
+    parentId: fld_presencas
+    name: Deletar Presença
+    url: http://localhost:8080/Presencas/1
+    method: DELETE
+    headers: []
+    body: {}
+
+  # ATIVIDADES
+  - _id: req_atividades_list
+    _type: request
+    parentId: fld_atividades
+    name: Listar Atividades
+    url: http://localhost:8080/atividades
+    method: GET
+    headers: []
+    body: {}
+
+  - _id: req_atividades_get
+    _type: request
+    parentId: fld_atividades
+    name: Obter Atividade
+    url: http://localhost:8080/atividades/1
+    method: GET
+    headers: []
+    body: {}
+
+  - _id: req_atividades_create
+    _type: request
+    parentId: fld_atividades
+    name: Criar Atividade
+    url: http://localhost:8080/atividades
+    method: POST
+    headers:
+      - name: Content-Type
+        value: application/json
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "id_aluno": 1,
+          "descricao": "Exercícios de Matemática",
+          "data_atividade": "2024-11-26",
+          "link_atividade": "https://exemplo.com/atividade"
+        }
+
+  - _id: req_atividades_update
+    _type: request
+    parentId: fld_atividades
+    name: Atualizar Atividade
+    url: http://localhost:8080/atividades/1
+    method: PUT
+    headers:
+      - name: Content-Type
+        value: application/json
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "descricao": "Exercícios de Matemática - Atualizado"
+        }
+
+  - _id: req_atividades_delete
+    _type: request
+    parentId: fld_atividades
+    name: Deletar Atividade
+    url: http://localhost:8080/atividades/1
+    method: DELETE
+    headers: []
+    body: {}
+
+  # PAGAMENTOS
+  - _id: req_pagamentos_list
+    _type: request
+    parentId: fld_pagamentos
+    name: Listar Pagamentos
+    url: http://localhost:8080/Pagamentos
+    method: GET
+    headers: []
+    body: {}
+
+  - _id: req_pagamentos_get
+    _type: request
+    parentId: fld_pagamentos
+    name: Obter Pagamento
+    url: http://localhost:8080/Pagamentos/1
+    method: GET
+    headers: []
+    body: {}
+
+  - _id: req_pagamentos_create
+    _type: request
+    parentId: fld_pagamentos
+    name: Criar Pagamento
+    url: http://localhost:8080/Pagamentos
+    method: POST
+    headers:
+      - name: Content-Type
+        value: application/json
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "id_aluno": 1,
+          "data_pagamento": "2024-11-26",
+          "valor": 450.00,
+          "status": "Pago"
+        }
+
+  - _id: req_pagamentos_update
+    _type: request
+    parentId: fld_pagamentos
+    name: Atualizar Pagamento
+    url: http://localhost:8080/Pagamentos/1
+    method: PUT
+    headers:
+      - name: Content-Type
+        value: application/json
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "status": "Pendente"
+        }
+
+  - _id: req_pagamentos_delete
+    _type: request
+    parentId: fld_pagamentos
+    name: Deletar Pagamento
+    url: http://localhost:8080/Pagamentos/1
+    method: DELETE
+    headers: []
+    body: {}
+
+  # FOLDERS
+  - _id: fld_alunos
+    _type: request_group
+    name: Alunos
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1700000000000
+
+  - _id: fld_professores
+    _type: request_group
+    name: Professores
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1699000000000
+
+  - _id: fld_turmas
+    _type: request_group
+    name: Turmas
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1698000000000
+
+  - _id: fld_presencas
+    _type: request_group
+    name: Presenças
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1697000000000
+
+  - _id: fld_atividades
+    _type: request_group
+    name: Atividades
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1696000000000
+
+  - _id: fld_pagamentos
+    _type: request_group
+    name: Pagamentos
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1695000000000

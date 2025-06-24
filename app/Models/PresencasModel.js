@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
-import sequelize from "../../config/sequelize";
+import sequelize from "../../config/sequelize.js";
+import Aluno from "./AlunoModel.js";
 
 export default (function () {
   return sequelize.define(
@@ -10,7 +11,7 @@ export default (function () {
         autoIncrement: true,
         primaryKey: true,
       },
-      aluno_id: {
+      id_aluno: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {

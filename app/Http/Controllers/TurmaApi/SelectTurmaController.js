@@ -1,6 +1,4 @@
 import TurmaModel from "../../../Models/TurmaModel.js";
-import AlunoModel from "../../../Models/AlunoModel.js";
-import ProfessorModel from "../../../Models/ProfessorModel.js";
 import CONSTANTS from "../../../../config/constants.js";
 
 export default async (request, response) => {
@@ -12,18 +10,7 @@ export default async (request, response) => {
 
     if (id) {
       // Busca uma turma específica pelo ID com seus alunos e professor
-      result = await TurmaModel.findByPk(id, {
-        include: [
-          {
-            model: AlunoModel,
-            as: "aluno",
-          },
-          {
-            model: ProfessorModel,
-            as: "professor",
-          },
-        ],
-      });
+      result = await TurmaModel.findByPk(id);
 
       if (!result) {
         return response
@@ -32,18 +19,7 @@ export default async (request, response) => {
       }
     } else {
       // Busca todas as turmas com seus alunos e professores
-      result = await TurmaModel.findAll({
-        include: [
-          {
-            model: AlunoModel,
-            as: "aluno",
-          },
-          {
-            model: ProfessorModel,
-            as: "professor",
-          },
-        ],
-      });
+      result = await TurmaModel.findAll();
     }
 
     return response.status(HTTP_STATUS.SUCCESS).json(result);

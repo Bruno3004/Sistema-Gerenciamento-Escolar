@@ -29,23 +29,10 @@ export default async (request, response) => {
       // Busca pagamentos de um aluno específico
       result = await PagamentosModel.findAll({
         where: { id_aluno: id_aluno },
-        include: [
-          {
-            model: AlunoModel,
-            as: "aluno",
-          },
-        ],
       });
     } else {
       // Busca todos os pagamentos
-      result = await PagamentosModel.findAll({
-        include: [
-          {
-            model: AlunoModel,
-            as: "aluno",
-          },
-        ],
-      });
+      result = await PagamentosModel.findAll({});
     }
 
     return response.status(HTTP_STATUS.SUCCESS).json(result);

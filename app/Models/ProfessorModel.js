@@ -3,7 +3,7 @@ import sequelize from "../../config/sequelize.js";
 
 export default (function () {
   return sequelize.define(
-    "Professor",
+    "ProfessorModel",
     {
       id_professor: {
         type: DataTypes.INTEGER,
@@ -31,4 +31,4 @@ export default (function () {
       timestamps: false,
     }
   );
-});
+})();

@@ -30,23 +30,10 @@ export default async (request, response) => {
       // Busca presenças de um aluno específico
       result = await PresencasModel.findAll({
         where: { aluno_id: aluno_id },
-        include: [
-          {
-            model: AlunoModel,
-            as: "aluno",
-          },
-        ],
       });
     } else {
       // Busca todas as presenças
-      result = await PresencasModel.findAll({
-        include: [
-          {
-            model: AlunoModel,
-            as: "aluno",
-          },
-        ],
-      });
+      result = await PresencasModel.findAll({});
     }
 
     return response.status(HTTP_STATUS.SUCCESS).json(result);
