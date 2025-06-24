@@ -18,19 +18,19 @@ https://github.com/Bruno3004/Sistema-Gerenciamento-Escolar/wiki
 
 ## Tecnologias Utilizadas
 
-- ** Java Script**
-- ** Html**
-- ** Docker**
-- ** Postgres**
-- ** Nginx**
-- ** Node**
-- ** Sequelize**
+- **Java Script**
+- **Html**
+- **Docker**
+- **Postgres**
+- **Nginx**
+- **Node**
+- **Sequelize**
 
 ## Pré-requisitos
 
-- ** Docker**
-- ** Docker compose**
-- ** Git**
+- **Docker**
+- **Docker compose**
+- **Git**
 
 ## Instalação/Configurar
 
