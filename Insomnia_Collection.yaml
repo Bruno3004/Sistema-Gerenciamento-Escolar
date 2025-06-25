@@ -432,3 +432,74 @@ resources:
     environment: {}
     environmentPropertyOrder: null
     metaSortKey: -1695000000000
+
+  # USUÁRIOS
+  - _id: req_usuarios_list
+    _type: request
+    parentId: fld_usuarios
+    name: Listar Usuários
+    url: http://localhost:8080/users
+    method: GET
+    headers: []
+    body: {}
+
+  - _id: req_usuarios_get
+    _type: request
+    parentId: fld_usuarios
+    name: Obter Usuário
+    url: http://localhost:8080/users/1
+    method: GET
+    headers: []
+    body: {}
+
+  - _id: req_usuarios_create
+    _type: request
+    parentId: fld_usuarios
+    name: Criar Usuário
+    url: http://localhost:8080/users
+    method: POST
+    headers:
+      - name: Content-Type
+        value: application/json
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "nome_completo": "João Silva Santos",
+          "email": "joao.silva@escola.com",
+          "senha": "senha123",
+          "cargo": "Secretário"
+        }
+
+  - _id: req_usuarios_update
+    _type: request
+    parentId: fld_usuarios
+    name: Atualizar Usuário
+    url: http://localhost:8080/users/1
+    method: PUT
+    headers:
+      - name: Content-Type
+        value: application/json
+    body:
+      mimeType: application/json
+      text: |
+        {
+          "cargo": "Coordenador",
+          "senha": "novaSenha123"
+        }
+
+  - _id: req_usuarios_delete
+    _type: request
+    parentId: fld_usuarios
+    name: Deletar Usuário
+    url: http://localhost:8080/users/1
+    method: DELETE
+    headers: []
+    body: {}
+
+  - _id: fld_usuarios
+    _type: request_group
+    name: Usuários
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1694000000000

@@ -5,6 +5,7 @@ import PagamentosApi from "./api/PagamentosApi.js";
 import PresencasApi from "./api/PresencasApi.js";
 import ProfessorApi from "./api/ProfessorApi.js";
 import TurmaApi from "./api/TurmaApi.js";
+import UsuarioApi from "./api/UsuarioApi.js";
 
 export default (function () {
   const router = Router();
@@ -20,6 +21,8 @@ export default (function () {
   router.use("/", ProfessorApi);
 
   router.use("/", TurmaApi);
+
+  router.use("/", UsuarioApi);
 
   return router;
 })();

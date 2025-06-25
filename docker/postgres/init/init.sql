@@ -46,6 +46,27 @@ CREATE TABLE Atividades (
     link_atividade TEXT
 );
 
+CREATE TABLE Usuario (
+    id_usuario SERIAL PRIMARY KEY,
+    nome_completo VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(100) NOT NULL,
+    cargo VARCHAR(50) NOT NULL
+);
+
+-- Inserção de usuários
+INSERT INTO Usuario (nome_completo, email, senha, cargo) VALUES 
+    ('Admin Sistema', 'admin@escola.com', 'admin123', 'Administrador'),
+    ('Maria Coordenadora', 'maria.coord@escola.com', 'coord123', 'Coordenador'),
+    ('João Secretário', 'joao.sec@escola.com', 'sec123', 'Secretário'),
+    ('Ana Diretora', 'ana.dir@escola.com', 'dir123', 'Diretor'),
+    ('Carlos Financeiro', 'carlos.fin@escola.com', 'fin123', 'Financeiro'),
+    ('Lucia Pedagoga', 'lucia.ped@escola.com', 'ped123', 'Pedagogo'),
+    ('Roberto Supervisor', 'roberto.sup@escola.com', 'sup123', 'Supervisor'),
+    ('Sandra Assistente', 'sandra.ass@escola.com', 'ass123', 'Assistente'),
+    ('Marcos Orientador', 'marcos.ori@escola.com', 'ori123', 'Orientador'),
+    ('Paula Bibliotecária', 'paula.bib@escola.com', 'bib123', 'Bibliotecário');
+
 -- Inserção de dados de exemplo
  INSERT INTO Professor (nome_completo, email, telefone) VALUES 
     ('Alexandre', 'teste@exemplo.com', '41414212'),
