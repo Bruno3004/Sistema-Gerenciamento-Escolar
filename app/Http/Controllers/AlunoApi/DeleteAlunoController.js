@@ -1,4 +1,7 @@
 import AlunoModel from "../../../Models/AlunoModel.js";
+import PagamentosModel from "../../../Models/PagamentosModel.js";
+import PresencasModel from "../../../Models/PresencasModel.js";
+import AtividadesModel from "../../../Models/AtividadesModel.js";
 
 export default async (request, response) => {
   const HTTP_STATUS = CONSTANTS.HTTP;
@@ -19,6 +22,11 @@ export default async (request, response) => {
         .status(HTTP_STATUS.NOT_FOUND)
         .json({ error: "Aluno não encontrado." });
     }
+
+    // Remove registros relacionados
+    await PagamentosModel.destroy({ where: { id_aluno: id } });
+    await PresencasModel.destroy({ where: { id_aluno: id } });
+    await AtividadesModel.destroy({ where: { id_aluno: id } });
 
     // Remove o aluno
     await aluno.destroy();
