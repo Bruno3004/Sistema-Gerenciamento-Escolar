@@ -16,7 +16,6 @@ export default async (request, response) => {
   try {
     // Verifica se o aluno existe
     const aluno = await AlunoModel.findByPk(id);
-
     if (!aluno) {
       return response
         .status(HTTP_STATUS.NOT_FOUND)
